@@ -1,15 +1,11 @@
-//import { useEffect, useState } from 'react';
 import React from 'react';
-//import { getGifs } from '../helpers/getGifs';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 import { GifItem } from './GifItem';
+import PropTypes from 'prop-types';
+//import { useEffect, useState } from 'react';
+//import { getGifs } from '../helpers/getGifs';
 
-// eslint-disable-next-line react/prop-types
 export const GifGrid = ({ category }) => {
-
-    const { images, isLoading } = useFetchGifs(category);
-
-    console.log({ images, isLoading });
 
     // const [images, setImages] = useState([]);
 
@@ -22,6 +18,10 @@ export const GifGrid = ({ category }) => {
     //     getImages();
     // },[]);
 
+    const { images, isLoading } = useFetchGifs(category);
+
+    console.log({ images, isLoading });
+
     return (
         <>
             <h3>{category}</h3>
@@ -31,10 +31,13 @@ export const GifGrid = ({ category }) => {
 
             <div className='card-grid'>
                 {
-                    // images.map(img=>(<li key={img.id}>{img.title}</li>))
                     images.map((image) => (<GifItem key={image.id} {...image} />))
                 }
             </div>
         </>
     );
+};
+
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired,
 };

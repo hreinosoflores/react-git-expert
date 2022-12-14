@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en GifExpertApp should first 1`] = `
+<div>
+  <h1>
+    Gif Expert App
+  </h1>
+  <form
+    aria-label="form"
+  >
+    <input
+      placeholder="Buscar Gifs"
+      type="text"
+      value="Saitama"
+    />
+  </form>
+  <h3>
+    One Punch
+  </h3>
+  <h2>
+    Cargando...
+  </h2>
+  <div
+    class="card-grid"
+  />
+</div>
+`;
